@@ -40,11 +40,9 @@ public class MsSql extends AbstractDialect {
   public boolean matchesJdbcUrl(String jdbcConnectionURL) {
     return StringUtils.startsWithIgnoreCase(jdbcConnectionURL, "jdbc:sqlserver:");
   }
-
-  @Override
-  public boolean supportsMigration() {
-    return true;
-  }
+    @Override
+  public boolean supportsMigration() { return true; }
+        
 
   @Override
   public void init(DatabaseMetaData metaData) throws SQLException {
