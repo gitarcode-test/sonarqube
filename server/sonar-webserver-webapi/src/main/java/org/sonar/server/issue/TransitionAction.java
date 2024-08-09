@@ -55,11 +55,9 @@ public class TransitionAction extends Action {
     String transition = transition(properties);
     return canExecuteTransition(issue, transition) && transitionService.doTransition(context.issue(), context.issueChangeContext(), transition(properties));
   }
-
-  @Override
-  public boolean shouldRefreshMeasures() {
-    return true;
-  }
+    @Override
+  public boolean shouldRefreshMeasures() { return true; }
+        
 
   private boolean canExecuteTransition(DefaultIssue issue, String transitionKey) {
     return transitionService.listTransitions(issue)

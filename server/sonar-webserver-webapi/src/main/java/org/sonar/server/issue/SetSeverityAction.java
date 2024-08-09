@@ -63,11 +63,9 @@ public class SetSeverityAction extends Action {
   public boolean execute(Map<String, Object> properties, Context context) {
     return issueUpdater.setManualSeverity(context.issue(), verifySeverityParameter(properties), context.issueChangeContext());
   }
-
-  @Override
-  public boolean shouldRefreshMeasures() {
-    return true;
-  }
+    @Override
+  public boolean shouldRefreshMeasures() { return true; }
+        
 
   private static String verifySeverityParameter(Map<String, Object> properties) {
     String param = (String) properties.get(SEVERITY_PARAMETER);
